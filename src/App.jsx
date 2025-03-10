@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useDebounce } from "react-use";
 import Search from "./components/Search";
 import Spinner from "./components/Spinner";
+import MovieCard from "./components/MovieCard";
 
-const API_BASE_URL = "https://api.themoviedb.org/3";
-
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
-
+const API_BASE_URL = "https://api.themoviedb.org/3/";
+const API_KEY = import.meta.env.VITE_API_KEY;
 const API_OPTIONS = {
   method: "GET",
   headers: {
@@ -19,18 +19,24 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [moviesList, setMoviesList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
 
-  const fetchMovies = async () => {
+  useDebounce(
+    () => {
+      setDebouncedSearchTerm(searchTerm);
+    },
+    500,
+    [searchTerm]
+  );
+
+  const fetchMovies = async (query = "") => {
     setIsLoading(true);
     setErrorMessage("");
     try {
-      if (!searchTerm) {
-        setMoviesList([]);
-        setIsLoading(false);
-        return;
-      }
+      const endpoint = query
+        ? `${API_BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
+        : `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
 
-      const endpoint = `${API_BASE_URL}?sort_by=popularity.desc&query=${searchTerm}`;
       const response = await fetch(endpoint, API_OPTIONS);
 
       if (!response.ok) {
@@ -48,8 +54,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetchMovies();
-  }, [searchTerm]);
+    fetchMovies(debouncedSearchTerm);
+  }, [debouncedSearchTerm]);
 
   return (
     <main>
@@ -73,9 +79,7 @@ const App = () => {
           ) : moviesList.length > 0 ? (
             <ul>
               {moviesList.map((movie) => (
-                <p key={movie.id} className="text-white">
-                  {movie.title}
-                </p>
+                <MovieCard key={movie.id} movie={movie} />
               ))}
             </ul>
           ) : (
