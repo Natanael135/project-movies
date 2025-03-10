@@ -11,31 +11,27 @@ function Footer() {
       <div className="max-w-[80rem] mx-auto px-6 grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-24">
         {/* Seção 1: Sobre */}
         <div className="mb-8">
-          <h3 className="text-xl font-bold text-white mb-4">Natanael Melo</h3>
-          <p className="text-light-200 leading-relaxed mb-6">
-            Desenvolvedor Front-end focado em criar experiências web incríveis e
-            intuitivas.
-          </p>
-          <div className="flex flex-row gap-6 items-center justify-start">
-            <a
-              href="https://github.com/Natanael135"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-light-200 flex items-center gap-2"
+          <h3 className="text-xl font-bold text-white mb-4">
+            Quer conhecer e ver mais projetos como esse?{" "}
+          </h3>
+          <a
+            href="https://natanaelmelo.netlify.app/"
+            className="text-light-200 flex items-center gap-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="white"
             >
-              <i className="bx bxl-github text-2xl"></i>
-            </a>
-            <a
-              href="https://linkedin.com/in/natanaelsmelo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-light-200 flex items-center gap-2"
-            >
-              <i className="bx bxl-linkedin text-2xl"></i>
-            </a>
-          </div>
+              <path d="M20 6h-3V4c0-1.103-.897-2-2-2H9c-1.103 0-2 .897-2 2v2H4c-1.103 0-2 .897-2 2v11c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2zm-5-2v2H9V4h6zM4 8h16v4h-3v-2h-2v2H9v-2H7v2H4V8zm0 11v-5h3v2h2v-2h6v2h2v-2h3.001v5H4z"></path>
+            </svg>
+            Acesse meu Portfólio
+          </a>
         </div>
-
         {/* Seção 2: Contato */}
         <div className="mb-8">
           <h3 className="text-xl font-bold text-white mb-4">Contato</h3>
