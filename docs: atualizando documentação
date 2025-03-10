@@ -60,28 +60,32 @@ npm run dev
 
 ## Componentes
 
-### `App.js`
+### `App.jsx`
 
 - Componente principal que gerencia o estado global da aplicação.
 - Faz chamadas à API do TMDB e ao Appwrite.
 
-### `Search.js`
+### `Search.jsx`
 
 - Campo de pesquisa interativo.
 - Atualiza dinamicamente o termo de busca.
 
-### `Spinner.js`
+### `Spinner.jsx`
 
 - Exibe um indicador de carregamento enquanto os dados estão sendo buscados.
 - Utiliza o Flowbite para um design otimizado.
 
-### `MovieCard.js`
+### `MovieCard.jsx`
 
 - Exibe informações de um filme, como título, avaliação e data de lançamento.
 
 ### `appwrite.js`
 
 - Gerencia interação com o banco de dados Appwrite para armazenar e recuperar buscas populares.
+
+### `Footer.jsx`
+
+- Mostra informações sobre autor e como contata-lo.
 
 ## Melhorias Futuras
 
