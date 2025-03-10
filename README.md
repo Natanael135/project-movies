@@ -2,6 +2,8 @@
 
 Find Movie App é uma aplicação de busca e exibição de filmes, utilizando a API The Movie Database (TMDB) para buscar informações sobre filmes e o Appwrite para armazenar e recuperar dados de buscas populares. A aplicação permite que os usuários pesquisem filmes, descubram tendências populares e futuramente visualizem detalhes sobre os filmes.
 
+![Preview da Aplicação](./public/preview.png)
+
 ## Tecnologias Utilizadas
 
 - **React.js** para a interface do usuário
@@ -10,7 +12,6 @@ Find Movie App é uma aplicação de busca e exibição de filmes, utilizando a 
 - **Flowbite** para componentes de UI, incluindo o indicador de carregamento
 - **TMDB API** para buscar informações sobre filmes
 - **React Hooks** como `useEffect`, `useState` e `useDebounce` da `react-use`
-
 
 ## Configuração do Ambiente
 
